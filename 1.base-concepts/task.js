@@ -1,17 +1,14 @@
 "use strict";
 function solveEquation(a, b, c) {
   let arr;
-  arr = b**2-4*a*c;
-  if (arr < 0) {
-   arr=[];
-   return arr; 
-  } else if (arr === 0) {
+  const dis = b**2-4*a*c;
+  arr=[]
+ if (dis === 0) {
    arr=[-b/(2*a)];
-   return arr;
-  } else { 
-   arr=[Math.round((-b + Math.sqrt(b) )/(2*a)),Math.round((-b - Math.sqrt(b) )/(2*a))]
-   return arr; // array
+  } else if (dis >0) { 
+   arr=[((-b + Math.sqrt(dis))/(2*a)),((-b - Math.sqrt(dis)) /(2*a))]
   }
+  return arr;
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
