@@ -1,8 +1,9 @@
 function parseCount(str) {
-  if (isNaN(Number.parseInt(str))) {
+let nP = Number.parseInt(str);
+  if (isNaN(nP)) {
     throw new Error("Невалидное значение");
   }
-  return Number.parseInt(str);
+  return nP;
 }
 
 function validateCount(strPars) {
