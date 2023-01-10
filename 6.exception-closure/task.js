@@ -23,7 +23,7 @@ class Triangle {
         this.c = c;
     }
     getPerimeter(){
-            return this.a + this.b + this.c;
+        return this.a + this.b + this.c;
     }
     getArea(){
             let p = (this.a + this.b + this.c)*0.5;
@@ -35,6 +35,9 @@ function getTriangle(a,b,c){
     try{
         return new Triangle(a,b,c);
     } catch(error){
-        return "Ошибка! Треугольник не существует";
+        return {
+            getArea(){console.log("Ошибка! Треугольник не существует");},
+            getPerimeter(){console.log("Ошибка! Треугольник не существует");}
+        }
     }
 }
