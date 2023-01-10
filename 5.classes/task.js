@@ -77,21 +77,18 @@ class Library {
     }
     findBookBy(type, value) {
         for (let i = 0; i < this.books.length; i +=1 ){
-            if (this.books[i].type === value) {
-                console.log(this.books[i].name);
-                return this.books[i].name;
-            } else {
-               return null;
-            }
-
+            if (this.books[i][type] === value) {
+                return this.books[i];
         }
     }
+        return null;
+    }
     giveBookByName(bookName) {
-        const bookIndex = this.books.findIndex((book) => book.name = bookName);
-            if (bookIndex >= 0) {
-            return this.books.slice(bookIndex,1)[0];
-            } else {
-               return null;
+            for (let i = 0; i < this.books.length; i +=1 ){
+                if (this.books[i].name === bookName) {
+                    return this.books.splice(i,1)[0];
             }
+        }
+            return null;
     }
 }
